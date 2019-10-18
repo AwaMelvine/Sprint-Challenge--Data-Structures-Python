@@ -10,7 +10,7 @@ f.close()
 f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
-
+# FIRST SOLUTION
 duplicates = []
 bst = BinarySearchTree(names_1[0])
 for name in names_1:
@@ -19,6 +19,10 @@ for name in names_1:
 for name in names_2:
     if bst.contains(name):
         duplicates.append(name)
+
+# SECOND SOLUTION - STRETCH
+# duplicates = set(names_1).intersection(names_2)
+
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
